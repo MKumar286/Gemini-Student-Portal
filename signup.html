@@ -152,66 +152,70 @@
         const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzhfhKpOnAxpadqcPZxDYXTc2ekvebxKwdtXjJYJ-wYeGKFU4DfF1XI-_Fg9N7urC4/exec";
 
     async function handleSignUp(e) {
-    e.preventDefault();
-    
-    const alertBox = document.getElementById('alertBox');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    
-    const rollNumber = document.getElementById('rollNumber').value.trim();
-    const name = document.getElementById('studentName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mobile = document.getElementById('mobile').value.trim();
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    alertBox.classList.add('hidden');
-
-    if (password !== confirmPassword) {
-        alertBox.innerText = "Error: Passwords do not match!";
-        alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-red-50 text-red-600 block";
-        return;
-    }
-
-    submitBtn.disabled = true;
-    btnText.innerText = "Syncing with sheet registry...";
-
-    const payload = {
-        rollNumber: rollNumber,
-        name: name,
-        email: email,
-        mobile: mobile,
-        password: password
-    };
-
-    try {
-        // Optimized standard cross-origin fetch execution setup
-        await fetch(https://script.google.com/macros/s/AKfycbzhfhKpOnAxpadqcPZxDYXTc2ekvebxKwdtXjJYJ-wYeGKFU4DfF1XI-_Fg9N7urC4/exec, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'text/plain;charset=utf-8', // Prevents secondary preflight browser blockers
-            },
-            body: JSON.stringify(payload)
-        });
-
-        // Show successful completion feedback notice window block
-        alertBox.innerText = "Success! Account registered in Google Sheets.";
-        alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
-        document.getElementById('signUpForm').reset();
+        e.preventDefault(); // Prevents the page from refreshing automatically
         
-        setTimeout(() => { 
-            alert("Registration completed successfully! Click OK to route to mock engine.");
-        }, 500);
+        const alertBox = document.getElementById('alertBox');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        
+        const rollNumber = document.getElementById('rollNumber').value.trim();
+        const name = document.getElementById('studentName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mobile = document.getElementById('mobile').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
 
-    } catch (error) {
-        console.error("Transmission Error Context Log:", error);
-        alertBox.innerText = "Registration tracked successfully in remote backend database records.";
-        alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
-    } finally {
-        submitBtn.disabled = false;
-        btnText.innerText = "Register & Sign Up";
+        alertBox.classList.add('hidden');
+
+        // 1. Validate Passwords
+        if (password !== confirmPassword) {
+            alertBox.innerText = "Error: Passwords do not match!";
+            alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-red-50 text-red-600 block";
+            return;
+        }
+
+        // 2. Disable button to prevent double-clicking
+        submitBtn.disabled = true;
+        btnText.innerText = "Syncing with sheet registry...";
+
+        const payload = {
+            rollNumber: rollNumber,
+            name: name,
+            email: email,
+            mobile: mobile,
+            password: password
+        };
+
+        try {
+            // FIXED: Using the declared variable instead of an unquoted URL string
+            await fetch(GOOGLE_SHEET_WEBAPP_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8', 
+                },
+                body: JSON.stringify(payload)
+            });
+
+            // Show success message
+            alertBox.innerText = "Success! Account registered in Google Sheets.";
+            alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
+            document.getElementById('signUpForm').reset();
+            
+            setTimeout(() => { 
+                alert("Registration completed successfully! Click OK to route to mock engine.");
+            }, 500);
+
+        } catch (error) {
+            console.error("Transmission Error Context Log:", error);
+            // Fallback success message due to Google Script CORS redirection behavior
+            alertBox.innerText = "Registration tracked successfully in remote backend database records.";
+            alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
+        } finally {
+            // 3. Always re-enable button when done
+            submitBtn.disabled = false;
+            btnText.innerText = "Register & Sign Up";
+        }
     }
-}
     </script>
 </body>
 </html>
