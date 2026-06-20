@@ -6,7 +6,7 @@
     <title>Student Login | MGIT Placement Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -84,12 +84,14 @@
                         <p class="text-[11px] text-slate-400 mt-0.5">Provide your campus credentials to access the console</p>
                     </div>
 
-                    <form onsubmit="handleFormRedirect(event)" class="space-y-3.5">
+                    <div id="loginAlertBox" class="hidden p-3 rounded-lg text-xs font-semibold mb-2"></div>
+
+                    <form onsubmit="handleLogin(event)" class="space-y-3.5">
                         <div>
                             <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-1">Username / Roll Number</label>
                             <div class="relative group">
                                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 group-focus-within:text-mgit-sky transition"><i class="fa-regular fa-user text-xs"></i></span>
-                                <input type="text" required placeholder="e.g., 20261A05XX" 
+                                <input type="text" id="loginRollNumber" required placeholder="e.g., 20261A05XX" 
                                     class="w-full pl-9 pr-3 py-2 bg-slate-50/50 border border-slate-200 rounded-lg font-medium text-xs text-slate-955 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-mgit-sky/20 focus:border-mgit-sky transition duration-200">
                             </div>
                         </div>
@@ -101,7 +103,7 @@
                             </div>
                             <div class="relative group">
                                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 group-focus-within:text-mgit-sky transition"><i class="fa-solid fa-lock-open text-xs"></i></span>
-                                <input type="password" required placeholder="••••••••" 
+                                <input type="password" id="loginPassword" required placeholder="••••••••" 
                                     class="w-full pl-9 pr-3 py-2 bg-slate-50/50 border border-slate-200 rounded-lg font-medium text-xs text-slate-955 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-mgit-sky/20 focus:border-mgit-sky transition duration-200">
                             </div>
                         </div>
@@ -111,8 +113,8 @@
                             <label for="remember_me" class="ml-2 block text-[11px] font-medium text-slate-600 select-none">Remember this device</label>
                         </div>
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-mgit-navy to-blue-800 hover:from-blue-900 hover:to-indigo-900 text-white font-bold text-xs py-2.5 rounded-lg shadow-md transition transform active:scale-[0.99] flex items-center justify-center gap-1.5">
-                            Log In to Dashboard <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        <button type="submit" id="loginBtn" class="w-full bg-gradient-to-r from-mgit-navy to-blue-800 hover:from-blue-900 hover:to-indigo-900 text-white font-bold text-xs py-2.5 rounded-lg shadow-md transition transform active:scale-[0.99] flex items-center justify-center gap-1.5">
+                            <span id="loginBtnText">Log In to Dashboard</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </form>
 
@@ -124,7 +126,7 @@
 
                     <div class="text-center">
                         <p class="text-[11px] text-slate-500 font-medium">
-                            New student? <a href="#" class="text-mgit-sky font-bold hover:underline">Sign Up Now</a>
+                            New student? <a href="signup.html" class="text-mgit-sky font-bold hover:underline">Sign Up Now</a>
                         </p>
                     </div>
                 </div>
@@ -140,7 +142,7 @@
     </footer>
 
     <script>
-        function handleFormRedirect(e) {
+        function handleLogin(e) {
             e.preventDefault();
             alert("Credentials validated successfully! Routing into the Student Placement Dashboard Engine.");
         }
