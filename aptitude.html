@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptitude & Reasoning | MGIT Placement Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        mgit: {
+                            navy: '#1E3A8A',
+                            sky: '#3B82F6',
+                            slate: '#475569'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 font-sans min-h-screen flex flex-col justify-between antialiased text-slate-800">
+
+    <!-- Header Navigation -->
+    <header class="w-full bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <button onclick="window.location.href='Student_dashboard.html'" class="text-slate-500 hover:text-mgit-navy transition text-sm font-bold flex items-center gap-1.5 mr-2">
+                    <i class="fa-solid fa-arrow-left"></i> Dashboard
+                </button>
+                <div class="h-5 w-px bg-slate-200"></div>
+                <div>
+                    <h1 class="text-sm font-extrabold text-slate-900 tracking-tight leading-none uppercase">Aptitude & Reasoning</h1>
+                    <p class="text-[9px] font-bold text-rose-500 uppercase tracking-widest mt-0.5">Screening Round Preparation</p>
+                </div>
+            </div>
+            
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 uppercase">
+                <i class="fa-regular fa-lightbulb animate-pulse"></i> Core Assessment Engine
+            </span>
+        </div>
+    </header>
+
+    <!-- Main Content Selection Panels -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-12 flex flex-col justify-center">
+        
+        <div class="text-center max-w-xl mx-auto mb-10">
+            <h2 class="text-2xl font-black text-slate-900 tracking-tight">Select Training Dimension</h2>
+            <p class="text-xs text-slate-500 mt-1.5">Baseline placement evaluation screening criteria heavily focus on your accuracy and processing speed inside these two structural disciplines.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto w-full">
+            
+            <!-- Dimension Card 1: Quantitative Aptitude -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group relative overflow-hidden">
+                <!-- Background visual design touch -->
+                <div class="absolute -right-6 -bottom-6 text-orange-50/40 text-8xl font-black pointer-events-none select-none group-hover:text-orange-50/70 transition duration-300">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+                
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl shadow-inner mb-4">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Quantitative Aptitude</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-2">
+                        Master numerical analysis equations. Practice modules involving percentages, profit margins, speed equations, probability configurations, and direct compound algebra tracks.
+                    </p>
+                    
+                    <ul class="mt-4 space-y-1.5 border-t border-slate-100 pt-4 text-[11px] font-semibold text-slate-500">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Arithmetic Foundations</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Data Interpretation Sets</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Formulas & Speed Tactics</li>
+                    </ul>
+                </div>
+                
+                <button class="mt-6 relative z-10 w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold text-xs py-2.5 rounded-xl shadow-sm transition transform active:scale-[0.99] flex items-center justify-center gap-1.5">
+                    Enter Quant Arena <i class="fa-solid fa-circle-play text-[10px]"></i>
+                </button>
+            </div>
+
+            <!-- Dimension Card 2: Logical Reasoning -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group relative overflow-hidden">
+                <!-- Background visual design touch -->
+                <div class="absolute -right-6 -bottom-6 text-indigo-50/40 text-8xl font-black pointer-events-none select-none group-hover:text-indigo-50/70 transition duration-300">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl shadow-inner mb-4">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Logical Reasoning</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-2">
+                        Develop spatial and critical thinking patterns. Evaluate blood relationship trees, deductive coding matrices, spatial puzzles, syllogisms, and sequence analysis matrices.
+                    </p>
+                    
+                    <ul class="mt-4 space-y-1.5 border-t border-slate-100 pt-4 text-[11px] font-semibold text-slate-500">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Verbal Deduction Maps</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Seating & Matrix Puzzles</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Pattern Tracking Engines</li>
+                    </ul>
+                </div>
+                
+                <button class="mt-6 relative z-10 w-full bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white font-bold text-xs py-2.5 rounded-xl shadow-sm transition transform active:scale-[0.99] flex items-center justify-center gap-1.5">
+                    Enter Logical Arena <i class="fa-solid fa-circle-play text-[10px]"></i>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-slate-200 py-3 text-center">
+        <p class="text-[11px] text-slate-400 font-medium">
+            Mahatma Gandhi Institute of Technology (MGIT) • Placement Training Engine
+        </p>
+    </footer>
+
+</body>
+</html>
