@@ -3,138 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Prep Portal Dashboard</title>
+    <title>Student Dashboard | MGIT Placement Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        mgit: {
+                            navy: '#1E3A8A',
+                            sky: '#3B82F6',
+                            gold: '#B45309',
+                            slate: '#475569'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen p-6 md:p-12">
+<body class="bg-slate-50 font-sans min-h-screen flex flex-col justify-between antialiased text-slate-800">
 
-    <div class="max-w-7xl mx-auto">
-        <header class="mb-10">
-            <h1 class="text-3xl font-extrabold text-white tracking-tight">Welcome Back, Scholar!</h1>
-            <p class="text-gray-400 mt-2 text-lg">Your mission control for exams and placements. Select a module to begin.</p>
-        </header>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                    </div>
-                    <span class="text-xs font-semibold bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full">Simulated</span>
+    <header class="w-full bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-mgit-navy to-mgit-sky text-white px-3 py-1.5 rounded-xl font-black text-lg tracking-wider shadow-sm">
+                    MGIT
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Test Series</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Full-length exam simulations with detailed rank generation and timers.</p>
+                <div>
+                    <h1 class="text-sm font-extrabold text-slate-900 tracking-tight leading-none uppercase">Mahatma Gandhi</h1>
+                    <p class="text-[9px] font-bold text-mgit-sky uppercase tracking-widest mt-0.5">Institute of Technology</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="text-right hidden sm:block">
+                    <p class="text-xs font-bold text-slate-900">Student Console</p>
+                    <p class="text-[10px] font-medium text-slate-500">Placement Preparation Workspace</p>
+                </div>
+                <button onclick="window.location.href='login.html'" class="text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition">
+                    <i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <div class="mb-8">
+            <h2 class="text-2xl font-black text-slate-900 tracking-tight">Welcome to your Prep Dashboard</h2>
+            <p class="text-xs text-slate-500 mt-1">Select an active module below to start training, practicing, or reviewing your placement metrics.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-blue-50 text-mgit-sky rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-solid fa-cube"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 tracking-wide uppercase">Simulated</span>
+                    </div>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-mgit-sky transition">Test Series</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Full-length exam simulations with detailed rank generation and countdown timers.</p>
+                </div>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-mgit-navy hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-regular fa-square-check"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 tracking-wide uppercase">Topic-wise</span>
                     </div>
-                    <span class="text-xs font-semibold bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full">Topic-wise</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-emerald-600 transition">Practice Tests</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Quick bite-sized quizzes to test your specific understanding of key core CS topics.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Practice Tests</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Quick bite-sized quizzes to test your understanding of specific chapters.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-purple-500/10 rounded-xl text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-regular fa-clock"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 tracking-wide uppercase">University</span>
                     </div>
-                    <span class="text-xs font-semibold bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full">University</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-purple-600 transition">Previous Papers</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Access comprehensive question repositories from the last 5 years with full solved keys.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Previous Papers</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Access question repositories from the last 5 years with solved answers.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-purple-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-amber-500 hover:shadow-[0_0_20px_rgba(245,158,11 0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-amber-500/10 rounded-xl text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-amber-50 text-mgit-gold rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-solid fa-code"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 tracking-wide uppercase">In-Browser IDE</span>
                     </div>
-                    <span class="text-xs font-semibold bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-full">In-Browser IDE</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-mgit-gold transition">Coding Practice</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Master Data Structures & Algorithms within our interactive code compilation sandbox ecosystem.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Coding Practice</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Master Data Structures & Algorithms with our interactive coding playground.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-amber-700 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500 hover:shadow-[0_0_20px_rgba(236,72,153,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-pink-500/10 rounded-xl text-pink-500 group-hover:bg-pink-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-regular fa-lightbulb"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 tracking-wide uppercase">Screening Round</span>
                     </div>
-                    <span class="text-xs font-semibold bg-pink-500/10 text-pink-400 px-2.5 py-1 rounded-full">Screening Round</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-rose-600 transition">Aptitude & Reasoning</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Crack quantitative patterns, logical loops, and word puzzles to clear baseline tests.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Aptitude & Reasoning</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Crack quantitative, logical, and verbal puzzles to ace elimination tests.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-rose-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-indigo-500/10 rounded-xl text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-solid fa-briefcase"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 tracking-wide uppercase">Targeted</span>
                     </div>
-                    <span class="text-xs font-semibold bg-indigo-500/10 text-indigo-400 px-2.5 py-1 rounded-full">Targeted</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Company Tracks</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Tailored syllabus blocks mapped closely around the patterns of elite corporate hiring units.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Company Tracks</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Tailored syllabus blocks based on previous recruitment drives of top employers.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-indigo-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-cyan-500/10 rounded-xl text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-cyan-50 text-cyan-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-solid fa-book-open"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-700 tracking-wide uppercase">Resources</span>
                     </div>
-                    <span class="text-xs font-semibold bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded-full">Resources</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-cyan-600 transition">Study Material</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Quick cheat sheets, modular formula arrays, and rapid conceptual core CS documentation.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Study Material</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Quick cheat sheets, core CS subject notes, and conceptual definitions.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-cyan-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-500 hover:shadow-[0_0_20px_rgba(20,184,166,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-teal-500/10 rounded-xl text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 014 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.418.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M21 12h-4m4 4h-4" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-regular fa-address-card"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 tracking-wide uppercase">Soft Skills</span>
                     </div>
-                    <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded-full">Soft Skills</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-teal-600 transition">Resume & Interview</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Build ATS-friendly profiles and clear behavior loops for multi-tier HR panels.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Resume & Interview</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Build ATS-friendly profiles and prepare for behavioral HR panel questions.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-teal-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
-            <div class="group bg-gray-800 border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.15)] cursor-pointer">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="p-3 bg-red-500/10 rounded-xl text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
+            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-lg shadow-inner"><i class="fa-solid fa-chart-pie"></i></div>
+                        <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-red-700 tracking-wide uppercase">Insights</span>
                     </div>
-                    <span class="text-xs font-semibold bg-red-500/10 text-red-400 px-2.5 py-1 rounded-full">Insights</span>
+                    <h3 class="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-red-600 transition">Performance Analytics</h3>
+                    <p class="text-xs text-mgit-slate font-medium leading-relaxed mt-1.5">Track growth trends, scan competitive tier percentiles, and locate missing blindspots.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Performance Analytics</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Track metrics, see global percentiles, and locate your core conceptual blindspots.</p>
+                <button class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 font-bold text-xs py-2 rounded-lg transition flex items-center justify-center gap-1">
+                    Launch Module <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                </button>
             </div>
 
         </div>
-    </div>
+    </main>
+
+    <footer class="w-full bg-white border-t border-slate-200 py-3 px-4 text-center mt-8">
+        <p class="text-xs text-slate-400 font-medium">
+            Mahatma Gandhi Institute of Technology (MGIT) © 2026
+        </p>
+    </footer>
 
 </body>
 </html>
