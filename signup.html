@@ -149,76 +149,76 @@
 
     <script>
         // Double-check that this Web App URL is exactly matching your updated deployment link
-        const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwPJ7gOlA15lb2q1FZ97ymZx14Y9ZL7fnDY9VhDb3iBKrIF1PKeAAHu7rpMYS_WwbiK4A/exec";
+        // Paste your BRAND NEW copied Deployment URL here
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbykOV7W7Wdx9HGoOKkTXyes4YOmNhlFxjEfSAIMHCoTu2PFEipYYSM2EyD0vrYWTOVPvA/exec";
 
-        async function handleSignUp(event) {
-            event.preventDefault(); // Critical: Prevents traditional layout browser form reloads
-            
-            const alertBox = document.getElementById('alertBox');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
-            
-            const rollNumber = document.getElementById('rollNumber').value.trim();
-            const name = document.getElementById('studentName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const mobile = document.getElementById('mobile').value.trim();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
+async function handleSignUp(event) {
+    event.preventDefault();
+    
+    const alertBox = document.getElementById('alertBox');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    
+    const rollNumber = document.getElementById('rollNumber').value.trim();
+    const name = document.getElementById('studentName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-            // Clear previous warning banners
-            alertBox.classList.add('hidden');
+    alertBox.classList.add('hidden');
 
-            // Client Validation: Verify passwords match
-            if (password !== confirmPassword) {
-                alertBox.innerText = "Error: Passwords do not match!";
-                alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-red-50 text-red-600 block";
-                return;
-            }
+    if (password !== confirmPassword) {
+        alertBox.innerText = "Error: Passwords do not match!";
+        alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-red-50 text-red-600 block";
+        return;
+    }
 
-            // Optimize layout buttons for slow connections
-            submitBtn.disabled = true;
-            btnText.innerText = "Syncing with sheet registry...";
+    submitBtn.disabled = true;
+    btnText.innerText = "Syncing with sheet registry...";
 
-            const payload = {
-                rollNumber: rollNumber,
-                name: name,
-                email: email,
-                mobile: mobile,
-                password: password
-            };
+    const payload = {
+        rollNumber: rollNumber,
+        name: name,
+        email: email,
+        mobile: mobile,
+        password: password
+    };
 
-            try {
-                // Execute dynamic network asynchronous post request
-                await fetch(GOOGLE_SHEET_WEBAPP_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'text/plain;charset=utf-8'
-                    },
-                    body: JSON.stringify(payload)
-                });
+    try {
+        const response = await fetch(GOOGLE_SHEET_WEBAPP_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(payload)
+        });
 
-                // Display success response metrics
-                alertBox.innerText = "Success! Account registered in Google Sheets.";
-                alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
-                document.getElementById('signUpForm').reset();
-                
-                setTimeout(() => { 
-                    alert("Registration completed successfully! Click OK to route to mock engine.");
-                }, 500);
+        const result = await response.json();
 
-            } catch (error) {
-                console.error("Transmission Error Context Log:", error);
-                
-                // Graceful fallback for Google Apps Script CORS redirection behavior
-                alertBox.innerText = "Success! Data sent to database registry.";
-                alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
-                document.getElementById('signUpForm').reset();
-            } finally {
-                // Return interface back to usable active state
-                submitBtn.disabled = false;
-                btnText.innerText = "Register & Sign Up";
-            }
+        // Check if the backend flagged a duplicate database collision entry
+        if (result.status === "duplicate") {
+            alertBox.innerText = result.message;
+            alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-amber-50 text-amber-700 block";
+        } else if (result.status === "success") {
+            alertBox.innerText = "Success! Account registered in Google Sheets.";
+            alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-green-50 text-green-700 block";
+            document.getElementById('signUpForm').reset();
+            setTimeout(() => { 
+                alert("Registration completed successfully! Click OK to route to mock engine.");
+            }, 500);
         }
+
+    } catch (error) {
+        console.error("Transmission Error Context Log:", error);
+        // Fallback safety banner warning if cross-origin adjustments throw generic catch errors
+        alertBox.innerText = "Notice: Processing registration. Please refresh your data dashboard sheet to verify duplicates.";
+        alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-blue-50 text-blue-700 block";
+    } finally {
+        submitBtn.disabled = false;
+        btnText.innerText = "Register & Sign Up";
+    }
+}
     </script>
 </body>
 </html>
