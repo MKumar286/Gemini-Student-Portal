@@ -29,9 +29,8 @@
 </head>
 <body class="bg-slate-50 font-sans min-h-screen flex flex-col justify-between antialiased text-slate-800">
 
-    <!-- Top Navigation Header -->
     <header class="w-full bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <button onclick="window.location.href='aptitude.html'" class="text-slate-500 hover:text-mgit-navy transition text-sm font-bold flex items-center gap-1.5 mr-2">
                     <i class="fa-solid fa-arrow-left"></i> Back
@@ -45,30 +44,39 @@
             
             <div class="text-right hidden sm:block">
                 <span class="text-xs font-bold text-slate-500">Modules Completed: </span>
-                <span class="text-xs font-black text-amber-600">0 / 6</span>
+                <span class="text-xs font-black text-amber-600">0 / 20</span>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Layout -->
-    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
-        <!-- Section Title Dashboard Header -->
         <div class="mb-8 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
                 <h2 class="text-xl font-black text-slate-900 tracking-tight">Arithmetic & Numerical Analysis Modules</h2>
                 <p class="text-xs text-slate-500 mt-1">Select a conceptual study module to launch timed problem practice pools matched with automated solution blueprints.</p>
             </div>
-            <div class="flex gap-2">
-                <span class="text-[11px] font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-lg">Total Questions: 150</span>
+            <div>
                 <span class="text-[11px] font-bold bg-amber-50 text-amber-700 px-3 py-1 rounded-lg">Exam Tier: High</span>
             </div>
         </div>
 
-        <!-- Clickable Topics Grid Array -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             
-            <!-- Topic 1: Percentages -->
+            <div onclick="launchTopic('Number System')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Number System</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Divisibility rules, remainders, LCM & HCF parameters, unit digits, and prime factorization models.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
             <div onclick="launchTopic('Percentages')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -79,12 +87,10 @@
                     <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Fraction conversions, successive increments, variations, and expenditure estimations.</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
-                    <span><i class="fa-regular fa-file-lines mr-1"></i> 25 Questions</span>
                     <span class="text-slate-300">Unattempted</span>
                 </div>
             </div>
 
-            <!-- Topic 2: Profit, Loss & Discount -->
             <div onclick="launchTopic('Profit, Loss & Discount')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -95,12 +101,38 @@
                     <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Cost valuation indexing, marked metrics pricing, faulty balance traps, and partner gains.</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
-                    <span><i class="fa-regular fa-file-lines mr-1"></i> 25 Questions</span>
                     <span class="text-slate-300">Unattempted</span>
                 </div>
             </div>
 
-            <!-- Topic 3: Time, Speed & Distance -->
+            <div onclick="launchTopic('Ratios and Proportion')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Ratios and Proportion</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Compounded tracking layouts, mean proportionals, scaling properties, and balance division.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Ages')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Ages</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Linear age scale configurations, past-future structural shift parameters, and ratio relationships.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
             <div onclick="launchTopic('Time, Speed & Distance')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -108,15 +140,55 @@
                         <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
                     </div>
                     <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Time, Speed & Distance</h3>
-                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Relative velocity matrix configurations, train bypass timers, and upstream boat calculations.</p>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Relative velocity matrix configurations, average speed setups, and journey variance calculations.</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
-                    <span><i class="fa-regular fa-file-lines mr-1"></i> 30 Questions</span>
                     <span class="text-slate-300">Unattempted</span>
                 </div>
             </div>
 
-            <!-- Topic 4: Time & Work -->
+            <div onclick="launchTopic('Problems on Trains')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Problems on Trains</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Train crossing loops, platform length offsets, stationary object crossings, and parallel tracking.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Boats and Streams')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Boats and Streams</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Upstream navigation resistance metrics, downstream acceleration tracking, and still water velocity limits.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Races')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Races</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Linear tracking segments, circular loop races, start head-starts, and finishing time offsets.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
             <div onclick="launchTopic('Time & Work')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -127,28 +199,52 @@
                     <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Labor efficiency formulas, alternating day shift schedules, and pipe drainage outflow dynamics.</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
-                    <span><i class="fa-regular fa-file-lines mr-1"></i> 20 Questions</span>
                     <span class="text-slate-300">Unattempted</span>
                 </div>
             </div>
 
-            <!-- Topic 5: Permutations & Combinations -->
-            <div onclick="launchTopic('Permutations & Combinations')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+            <div onclick="launchTopic('Partnership')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
                 <div>
                     <div class="flex justify-between items-center mb-3">
-                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
                         <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
                     </div>
-                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Permutations & Combinations</h3>
-                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Linear arrangement indexing models, subset selection restrictions, and circular mapping sets.</p>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Partnership</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Capital investment ratios, duration balancing metrics, and working partner asset distribution.</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
-                    <span><i class="fa-regular fa-file-lines mr-1"></i> 25 Questions</span>
                     <span class="text-slate-300">Unattempted</span>
                 </div>
             </div>
 
-            <!-- Topic 6: Simple & Compound Interest -->
+            <div onclick="launchTopic('Averages')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Averages</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Sequential set averages, missing value detection, data inclusion/exclusion weight metrics.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Mixtures & Alligations')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Mixtures & Alligations</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Mean price tracking metrics, compound mixture adjustments, and successive dilution models.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
             <div onclick="launchTopic('Simple & Compound Interest')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -159,7 +255,90 @@
                     <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Annual compounding factors, growth differentiation indexing, and multi-tier installment formulas.</p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
-                    <span><i class="fa-regular fa-file-lines mr-1"></i> 25 Questions</span>
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Permutations & Combinations')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Permutations & Combinations</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Linear arrangement indexing models, subset selection restrictions, and circular mapping sets.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Probability')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Probability</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Independent events tracking, conditional probability matrices, dice throws, card structures, and Bayes rule.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Geometry')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Geometry</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Line and angle properties, circle tangent models, triangle similarity proofs, and polygon metrics.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Mensuration')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Mensuration</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">2D/3D dimensions, surface area variables, volume computations for cones, spheres, and cylinders.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Data Interpretation')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Data Interpretation</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Pie chart parameters, complex matrix bar graphs, line charts, and caselet breakdown evaluations.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
+                    <span class="text-slate-300">Unattempted</span>
+                </div>
+            </div>
+
+            <div onclick="launchTopic('Data Sufficiency')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-amber-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition">Data Sufficiency</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Statement logic testing, unique solution validity, mathematical parameter validation tracking.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold">
                     <span class="text-slate-300">Unattempted</span>
                 </div>
             </div>
@@ -167,19 +346,15 @@
         </div>
     </main>
 
-    <!-- Footer Area -->
     <footer class="w-full bg-white border-t border-slate-200 py-3 text-center">
         <p class="text-[11px] text-slate-400 font-medium">
             Mahatma Gandhi Institute of Technology (MGIT) • Quantitative Test Console
         </p>
     </footer>
 
-    <!-- Handler Script For Redirecting to Individual Quizzes -->
     <script>
         function launchTopic(topicName) {
             alert("Initializing assessment workspace parameters for module topic: " + topicName);
-            // Example Next Step Routing integration link blueprint:
-            // window.location.href = "quiz.html?topic=" + encodeURIComponent(topicName);
         }
     </script>
 </body>
