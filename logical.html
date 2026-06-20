@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Reasoning | MGIT Placement Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        mgit: {
+                            navy: '#1E3A8A',
+                            sky: '#3B82F6',
+                            slate: '#475569'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 font-sans min-h-screen flex flex-col justify-between antialiased text-slate-800">
+
+    <header class="w-full bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <button onclick="window.location.href='aptitude.html'" class="text-slate-500 hover:text-mgit-navy transition text-sm font-bold flex items-center gap-1.5 mr-2">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <div class="h-5 w-px bg-slate-200"></div>
+                <div>
+                    <h1 class="text-sm font-extrabold text-slate-900 tracking-tight leading-none uppercase">Logical Reasoning</h1>
+                    <p class="text-[9px] font-bold text-indigo-600 uppercase tracking-widest mt-0.5">Reasoning Arena Console</p>
+                </div>
+            </div>
+            
+            <div class="text-right hidden sm:block">
+                <span class="text-xs font-bold text-slate-500">Modules Completed: </span>
+                <span class="text-xs font-black text-indigo-600">0 / 14</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <div class="mb-8 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+                <h2 class="text-xl font-black text-slate-900 tracking-tight">Critical Thinking & Analytics Modules</h2>
+                <p class="text-xs text-slate-500 mt-1">Select an active verification module below to trigger simulated evaluation matrices designed by top recruitment bodies.</p>
+            </div>
+            <div>
+                <span class="text-[11px] font-bold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-lg">Exam Tier: High Accuracy</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <div onclick="launchLogicalTopic('Blood Relations')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Blood Relations</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Decipher family trees, coded relationship structures, and direct ancestral matrix linkages.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Coding - Decoding')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Coding - Decoding</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Letter shifting, numeric substitutions, conditional rules, and artificial language mapping.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Clocks & Calendars')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Clocks & Calendars</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Angular hand displacements, error tracking cycles, leap year matrices, and date-to-day parsing.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Direction Sense')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Direction Sense</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Spatial pathway maps, angular turn layouts, shadow positioning, and shortest distance vectors.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Seating Arrangements')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Seating Arrangements</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Linear tracking rows, inward/outward facing circular boundaries, and multi-variable square layouts.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Syllogisms')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Syllogisms</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Deductive reasoning tracks, logical Venn diagrams, and possibility verification statement tests.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Number & Letter Series')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Number & Letter Series</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Arithmetic/geometric numeric progression loops, alpha patterns, and missing node isolation.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Analogy & Classification')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Analogy & Classification</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Semantic relationships, odd-one-out array structures, and numeric symmetry rules.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Ranking & Ordering')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Ranking & Ordering</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Top/bottom relational row tracking, position swaps, and comparative attribute scaling sets.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Complex Puzzles')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Complex Puzzles</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Multi-tier cross-relational matrices, scheduling limits, and attribute profile balancing logs.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Data Arrangements')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Data Arrangements</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Tabular arrangement configurations, logic constraints tracking, and matching metrics trees.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Input - Output')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-red-50 text-red-700 uppercase tracking-wide">Hard</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Input - Output</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Sequential word-number processing loops, automated shifts, and trace processing step states.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Statement & Arguments')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-yellow-50 text-yellow-700 uppercase tracking-wide">Medium</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Statement & Arguments</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Analyzing strong vs weak logic parameters, processing core assumptions, and impact evaluation rules.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+            <div onclick="launchLogicalTopic('Non-Verbal Reasoning')" class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-indigo-500 hover:shadow-md cursor-pointer transition duration-150 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-green-50 text-green-700 uppercase tracking-wide">Easy</span>
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                    <h3 class="text-sm font-black text-slate-900 tracking-tight group-hover:text-indigo-600 transition">Non-Verbal Reasoning</h3>
+                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">Mirror reflections, water imaging metrics, pattern completion arrays, and paper folding logic.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-[10px] text-slate-300 font-bold">Unattempted</div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full bg-white border-t border-slate-200 py-3 text-center">
+        <p class="text-[11px] text-slate-400 font-medium">
+            Mahatma Gandhi Institute of Technology (MGIT) • Reasoning Test Console
+        </p>
+    </footer>
+
+    <script>
+        function launchLogicalTopic(topicName) {
+            alert("Initializing verification workspace parameters for reasoning module: " + topicName);
+        }
+    </script>
+</body>
+</html>
