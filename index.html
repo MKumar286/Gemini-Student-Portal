@@ -142,10 +142,24 @@
     </footer>
 
     <script>
-        function handleLogin(e) {
-            e.preventDefault();
-            alert("Credentials validated successfully! Routing into the Student Placement Dashboard Engine.");
-        }
+       function handleLogin(e) {
+    e.preventDefault(); // Prevents page reload
+    
+    // Get the login credentials entered by the student
+    const rollNumber = document.getElementById('loginRollNumber').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const alertBox = document.getElementById('loginAlertBox');
+
+    // For now, this lets them in with any input. 
+    // Later, you can add your fetch code here to validate against Google Sheets!
+    if (rollNumber && password) {
+        // Redirects the browser window to your dashboard file
+        window.location.href = "Student_dashboard.html"; 
+    } else {
+        alertBox.innerText = "Error: Please fill in all fields.";
+        alertBox.className = "p-3 rounded-lg text-xs font-semibold mb-2 bg-red-50 text-red-600 block";
+    }
+}
     </script>
 </body>
 </html>
